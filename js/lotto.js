@@ -1,5 +1,65 @@
+// [Object - 복합적인 데이터 key: value/ primitive type String, Number, Boolean]
+//json javaScriptObjectNotification
+const student01 = {
+  name: "김남현",
+  age: 20,
+  iq: 80,
+  isMarried: false,
+  address: "서울",
+};
+const student02 = {
+  name: "김지은",
+  age: 20,
+  iq: 80,
+  isMarried: false,
+  address: "당산",
+};
+
+const japanClass = [
+  {
+    name: "김남현",
+    age: 20,
+    iq: 80,
+    isMarried: false,
+    address: "서울",
+  },
+  {
+    name: "김지은",
+    age: 20,
+    iq: 80,
+    isMarried: false,
+    address: "당산",
+  },
+  {
+    name: "김세희",
+    age: 20,
+    iq: 80,
+    isMarried: false,
+    address: "당산",
+  },
+];
+for (let i = 0; i < 3; i++) {
+  console.log(japanClass[i].name, "===", japanClass[i].iq);
+}
+japanClass.forEach(function (item, idx) {
+  console.log(
+    idx,
+    item.name,
+    "==",
+    item.age,
+    "==",
+    item.iq,
+    "==",
+    item.isMarried
+  );
+});
+
+console.log(student01.address);
+console.log(japanClass[1].name);
+
+// [배열 - 단순한 데이터]
 const animals = ["rabbit", "tiger", "lion"];
-console.log(animals.splice(0, 2)); //0 ~ 시작 지점 2 ~ 몇 개를 없앨거인지
+console.log(animals.splice(0, 2)); //0 ~ 시작 지점 2 ~ 몇 개를 빼낼거인지
 console.log(animals);
 
 const candidateNum = [];

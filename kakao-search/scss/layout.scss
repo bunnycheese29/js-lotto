@@ -1,0 +1,85 @@
+@import "mixins";
+@import "vars";
+//*은 모든 태그
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Lato", "Pretendard", sans-serif;
+  font-size: 16px;
+  color: white;
+  background-color: #333;
+}
+img {
+  vertical-align: top;
+}
+li {
+  list-style: none;
+}
+header {
+  height: 60px;
+  background-color: #fff;
+  color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font-size: 18px;
+    font-weight: 300;
+    strong {
+      font-weight: 700;
+    }
+  }
+}
+.list {
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  li {
+    img {
+      width: 80px;
+    }
+  }
+}
+.search-box {
+  width: 600px;
+  padding: 10px 30px;
+  background-color: white;
+  display: flex;
+  margin: 50px auto;
+  border-radius: 100px;
+  //검색창
+  .search-txt {
+    height: 50px;
+    //남아있는 여백 다 가져간다
+    flex-grow: 1;
+    border: none;
+    font-size: 20px;
+    font-weight: 500;
+    outline: none;
+  }
+  //검색 버튼 (돋보기)
+  .btn-search {
+    background: none;
+    border: none;
+    outline: none;
+  }
+}
+
+.recent-search-word {
+  width: 1200px;
+  margin: 50px auto;
+  display: flex;
+  gap: 10px;
+  li {
+    padding: 15px 30px;
+    background-color: rgb(255, 173, 186);
+    color: white;
+    border-radius: 100px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+}
