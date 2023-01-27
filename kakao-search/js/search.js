@@ -13,6 +13,13 @@ if (recentSearchWordArray !== null) {
   recentSearchWordArray.forEach(function (item, idx) {
     recentSearchWord.innerHTML += `<li>${item}</li>`;
   });
+  const recentSearchWordItem = document.querySelectorAll("li");
+  recentSearchWordItem.forEach(function (item, idx) {
+    item.addEventListener("click", function () {
+      const txt = item.textContent;
+      searchImg(txt);
+    });
+  });
 }
 
 //실시간 검색 enter키 눌렀을 때
@@ -56,6 +63,14 @@ function searchImg(searchTxt) {
       //console.log(result.documents);
       result.documents.forEach(function (item, idx) {
         thumbList.innerHTML += `<li><a href="${item.image_url}" data-fancybox="gallery"><img src="${item.thumbnail_url}"</a></li>`;
+      });
+      //ul에 li가 추가된 상태
+      //to 쓰면 li style 넣어줘야 되고 from 쓰면 안 써줘도 됨
+
+      //each - 개별적으로 나오는데 시간 / amount - 전체 속도
+      gsap.from(".list li", {
+        opacity: 0,
+        stagger: { each: 0.02, from: "center" },
       });
     })
     .catch(function () {
