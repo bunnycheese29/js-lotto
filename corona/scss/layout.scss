@@ -1,0 +1,43 @@
+@import "mixins";
+@import "vars";
+//*은 모든 태그
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Lato", "Pretendard", sans-serif;
+  font-size: 16px;
+  color: white;
+  background-color: #333;
+  &.off {
+    overflow: hidden;
+  }
+}
+img {
+  vertical-align: top;
+}
+li {
+  list-style: none;
+}
+header {
+  height: 60px;
+  background-color: #fff;
+  color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font-size: 18px;
+    font-weight: 300;
+    strong {
+      font-weight: 700;
+    }
+  }
+}
+
+#myChart {
+  width: 1200px;
+  margin: 100px auto;
+}
