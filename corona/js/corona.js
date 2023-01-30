@@ -71,6 +71,7 @@ function loadCoronaData(pickedDate) {
       Chart.defaults.backgroundColor = "#FFE4EC";
       const ctx = document.querySelector("#myChart");
       chart = new Chart(ctx, {
+        plugins: [ChartDataLabels],
         type: "bar", //bar, doughnut, line
         data: {
           labels: cities,
@@ -83,6 +84,17 @@ function loadCoronaData(pickedDate) {
           ],
         },
         options: {
+          plugins: {
+            datalabels: {
+              color: "#ffffff",
+              anchor: "end", //어디에 표시할건지
+              align: "end", //anchor 기준 offset
+              offset: 10,
+              font: {
+                size: 18,
+              },
+            },
+          },
           scales: {
             y: {
               beginAtZero: true,
