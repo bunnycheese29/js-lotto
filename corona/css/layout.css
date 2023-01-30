@@ -62,7 +62,8 @@ header h1 strong {
 
 .date {
   position: fixed;
-  right: 50px;
+  z-index: 99;
+  right: 100px;
   top: 100px;
 }
 .date #picked-date {
