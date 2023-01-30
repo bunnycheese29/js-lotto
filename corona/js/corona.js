@@ -89,7 +89,7 @@ function loadCoronaData(pickedDate) {
               color: "#ffffff",
               anchor: "end", //어디에 표시할건지
               align: "end", //anchor 기준 offset
-              offset: 10,
+              offset: 10, //default = 4 떨어지는 거리
               font: {
                 size: 18,
               },
