@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MOVIE SEARCH</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"
+    />
+    <link rel="stylesheet" href="./css/layout.css" />
+    <!-- <script src="./search.js" defer></script> -->
+    <script src="./js/gsap/gsap.min.js"></script>
+    <script src="./js/search.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1><strong>MOVIE SEARCH</strong></h1>
+    </header>
+    <!-- prettier-ignore -->
+    <div class="search-box">
+      <input type="text" class="search-txt" />
+
+      <button class="btn-search"><span class="material-icons"> search </span></button>
+    </div>
+    <ul class="recent-search-word"></ul>
+    <ul class="list"></ul>
+    <button class="btn-more">더보기</button>
+    <!-- 혼자 떨어져있는 태그 (광고 팝업창 같은) -->
+    <aside class="movie-detail"></aside>
+  </body>
+</html>

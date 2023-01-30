@@ -28,15 +28,23 @@
       href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"
     />
     <link rel="stylesheet" href="./css/layout.css" />
+    <link rel="stylesheet" href="./css/easepick.css" />
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
     <script src="./js/gsap/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./js/easepick.min.js"></script>
     <script src="./js/corona.js" defer></script>
   </head>
   <body>
     <header>
       <h1>CORONA <strong>INFECTION</strong></h1>
     </header>
+    <div class="date">
+      <input type="text" name="" id="picked-date" />
+    </div>
+    <div class="loading">
+      <img src="./images/Spinner-1s-200px.svg" alt="" />
+    </div>
     <canvas id="myChart"></canvas>
   </body>
 </html>

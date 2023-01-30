@@ -1,0 +1,174 @@
+@import "mixins";
+@import "vars";
+//*은 모든 태그
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Lato", "Pretendard", sans-serif;
+  font-size: 16px;
+  color: white;
+  background-color: #333;
+  &.off {
+    overflow: hidden;
+  }
+}
+img {
+  vertical-align: top;
+}
+li {
+  list-style: none;
+}
+header {
+  height: 60px;
+  background-color: #fff;
+  color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font-size: 18px;
+    font-weight: 300;
+    strong {
+      font-weight: 700;
+    }
+  }
+}
+.list {
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  // flex-direction: column;
+  flex-wrap: wrap;
+  gap: 20px;
+  li {
+    display: flex;
+    flex-direction: column;
+    width: calc(25% - 20px);
+    padding: 10px;
+    background-color: white;
+    box-sizing: border-box;
+    color: #111;
+    img {
+      width: 100%;
+    }
+    .contents-box * {
+      margin: 5px 0;
+    }
+    .overview {
+      @include multiEllipsis(3, 1.5);
+    }
+  }
+}
+.search-box {
+  width: 600px;
+  padding: 10px 30px;
+  background-color: white;
+  display: flex;
+  margin: 50px auto;
+  border-radius: 100px;
+  //검색창
+  .search-txt {
+    height: 50px;
+    //남아있는 여백 다 가져간다
+    flex-grow: 1;
+    border: none;
+    font-size: 20px;
+    font-weight: 500;
+    outline: none;
+  }
+  //검색 버튼 (돋보기)
+  .btn-search {
+    background: none;
+    border: none;
+    outline: none;
+  }
+}
+
+.recent-search-word {
+  width: 1200px;
+  margin: 50px auto;
+  display: flex;
+  gap: 10px;
+  li {
+    padding: 15px 30px;
+    background-color: rgb(255, 173, 186);
+    color: white;
+    border-radius: 100px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+}
+.btn-more {
+  width: 120px;
+  padding: 20px 0;
+  background-color: rgba(248, 223, 242, 0.993);
+  border: none;
+  outline: none;
+  border-radius: 100px;
+  margin: 100px auto;
+  display: block;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+}
+.movie-detail {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  max-height: 100vh;
+  color: #111;
+  padding: 50px;
+  display: none;
+  box-sizing: border-box;
+  overflow: auto; //내용이 길어지면 스크롤바를 만들어줌
+  overflow-y: auto;
+  &.on {
+    display: block;
+  }
+  .img-box {
+    img {
+      width: 100%;
+    }
+  }
+  .contents-box * {
+    margin: 10px 0;
+  }
+  .contents-box {
+    h2 {
+      font-size: 32px;
+      font-weight: 700;
+      padding: 100px 50px;
+    }
+    .overview {
+      line-height: 1.8;
+    }
+  }
+  .btn-close {
+    border: none;
+    outline: none;
+    background-color: white;
+    color: #111;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+}
+.material-icons.md-18 {
+  font-size: 18px;
+}
+.material-icons.md-24 {
+  font-size: 24px;
+}
+.material-icons.md-36 {
+  font-size: 36px;
+}
+.material-icons.md-48 {
+  font-size: 48px;
+}
