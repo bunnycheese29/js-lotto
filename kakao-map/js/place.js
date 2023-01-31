@@ -5,9 +5,20 @@ searchTxt.addEventListener("keyup", function (e) {
   }
 });
 
-const container = document.querySelector("#map");
+//이벤트 위임 (미리 존재하고 있는 곳에 이벤트 걸기)
+//e.target.closest 이벤트가 닿는 가장 마지막 지점 (eg. body, container, div)
+//e.currentTarget 내가 찍은 것
 
+const container = document.querySelector("#map");
+container.addEventListener("click", function (e) {
+  // console.log(e.target)
+  if (e.target.closest("button")) {
+    customOverlay.setMap(null);
+  }
+});
+let customOverlay = null;
 function searchPlace(searchTxt) {
+  container.innerHTML = "";
   const mapOption = {
     center: new kakao.maps.LatLng(37.66826, 126.9786567),
     level: 3, //확대 레벨
@@ -16,7 +27,7 @@ function searchPlace(searchTxt) {
   container.innerHTML = "";
   const map = new kakao.maps.Map(container, mapOption);
   //   const infoWindow = new kakao.maps.InfoWindow({ zIndex: 99, removable: true });
-  const customOverlay = new kakao.maps.CustomOverlay({
+  customOverlay = new kakao.maps.CustomOverlay({
     map: map,
   });
   const place = new kakao.maps.services.Places();
@@ -63,14 +74,6 @@ function searchPlace(searchTxt) {
       map.setBounds(bounds);
     } else {
       alert("검색 결과가 존재하지 않습니다.");
-    }
-  });
-  function close() {
-    customOverlay.setMap(null);
-  }
-  container.addEventListener("click", function (e) {
-    if (e.target.closest("button")) {
-      close();
     }
   });
 }

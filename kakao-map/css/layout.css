@@ -126,6 +126,24 @@ header h1 strong {
   font-size: 16px;
   font-weight: 700;
 }
+#map .contents-box .intro {
+  color: rgb(112, 158, 103);
+}
+#map .contents-box .reserve {
+  background-color: rgb(87, 148, 218);
+  color: white;
+  border: 1px solid rgb(87, 148, 218);
+  border-radius: 3px;
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#map .contents-box .reserve a {
+  text-decoration: none;
+}
 
 .customoverlay {
   background-color: rgb(255, 184, 202);
