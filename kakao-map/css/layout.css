@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: "Lato", "Pretendard", sans-serif;
+  font-family: "Pretendard", sans-serif;
   font-size: 16px;
   background-color: #333;
 }
@@ -88,6 +88,43 @@ header h1 strong {
   aspect-ratio: 2/1;
   background-color: #000;
   margin: 100px auto;
+}
+#map .contents-box {
+  padding: 15px;
+  font-size: 14px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -140%);
+}
+#map .contents-box:after {
+  content: "";
+  display: block;
+  border: 5px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 10px solid transparent;
+  border-top-color: white;
+  bottom: -20px;
+}
+#map .contents-box div {
+  margin: 5px 0;
+}
+#map .contents-box .close {
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+#map .contents-box .title {
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .customoverlay {
