@@ -116,11 +116,18 @@ header {
     }
     .close {
       position: absolute;
-      right: 6px;
-      top: 6px;
+      right: -0;
+      top: -28px;
       border: none;
       background: none;
+      background-color: #111;
+      color: #fff;
+      border-radius: 3px;
       cursor: pointer;
+      .material-icons {
+        //font-size: px;
+        vertical-align: top;
+      }
     }
     .title {
       font-size: 16px;
