@@ -1,0 +1,123 @@
+@charset "UTF-8";
+/*디폴트값 30*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Pretendard", sans-serif;
+  font-size: 16px;
+  background-color: #111;
+}
+
+li {
+  list-style: none;
+}
+
+header {
+  height: 60px;
+  background-color: #fff;
+  color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header h1 {
+  font-size: 18px;
+  font-weight: 300;
+}
+header h1 strong {
+  font-weight: 700;
+}
+
+.btns h2 {
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  margin: 30px 0;
+}
+.btns ul {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.btns ul li input {
+  display: none;
+}
+.btns ul li input:checked + span {
+  background-color: rgb(186, 157, 233);
+}
+.btns ul li span {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: #666;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.paper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  width: 80%;
+  margin: auto;
+  box-sizing: border-box;
+  margin-top: 50px;
+}
+.paper ul {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  padding: 10px;
+}
+.paper ul li {
+  width: 36px;
+  height: 36px;
+  background-color: rgb(223, 165, 192);
+  color: white;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  overflow: hidden;
+  font-weight: 900;
+  box-shadow: 5px 5px 5px rgb(0, 0, 0);
+  position: relative;
+}
+.paper ul li:before {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  background-color: rgba(255, 255, 255, 0.15);
+  position: absolute;
+  left: -50px;
+  top: -50px;
+  overflow: hidden;
+}
+.paper ul li.yellow {
+  background-color: #ecdd56;
+}
+.paper ul li.blue {
+  background-color: #51afee;
+}
+.paper ul li.red {
+  background-color: #e64141;
+}
+.paper ul li.green {
+  background-color: #79cf64;
+}
+.paper ul li.gray {
+  background-color: #727272;
+}/*# sourceMappingURL=layout.css.map */

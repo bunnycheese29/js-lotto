@@ -145,4 +145,15 @@ button {
 .result .inner .desc {
   font-size: 15px;
   line-height: 1.5;
+}
+.result .inner .btn-kakao {
+  padding: 15px 30px;
+  background-color: rgb(255, 233, 105);
+  border-color: rgb(56, 43, 43);
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: inherit;
+}
+.result .inner span {
+  color: rgb(255, 180, 242);
 }/*# sourceMappingURL=layout.css.map */

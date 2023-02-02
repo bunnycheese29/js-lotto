@@ -1,4 +1,4 @@
-const QuestionData = [
+const questions = [
   {
     id: 1,
     title: "새로운 고양이를 데려왔다! 나의 반응은?",
@@ -208,6 +208,17 @@ const ResultData = [
   },
 ];
 
+//문제 섞기
+// for (let i = 0; i < 100; i++) {
+//   const First = parseInt(Math.random() * 12);
+//   const Second = parseInt(Math.random() * 12);
+//   const num = QuestionData[First];
+//   QuestionData[First] = QuestionData[Second];
+//   QuestionData[Second] = num;
+// }
+// console.log(QuestionData);
+
+const QuestionData = _.shuffle(questions);
 const btnStart = document.querySelector(".start .btn");
 const start = document.querySelector(".start");
 const question = document.querySelector(".question");
@@ -221,6 +232,36 @@ const result = document.querySelector(".result");
 const catType = document.querySelector(".result .cat-type");
 const cat = document.querySelector(".result .cat");
 const desc = document.querySelector(".result .desc");
+const myMbti = document.querySelector(".result .myMbti");
+
+//카카오톡 공유하기
+const btnKakao = document.querySelector(".result .btn-kakao");
+Kakao.init("aa65a833c3deab7e0cddf59d39d13315");
+const url = "https://catmbti-yeiwon.netlify.app";
+
+btnKakao.addEventListener("click", function () {
+  Kakao.Share.sendDefault({
+    objectType: "feed",
+    content: {
+      title: "나만없어 고양이",
+      description: `${selectedData.best}인 당신을 집사로 선택한 고양이는 ${selectedData.name}`,
+      imageUrl: `${url}/images/cat/${selectedData.image}.png`,
+      link: {
+        mobileWebUrl: url,
+        webUrl: url,
+      },
+    },
+    buttons: [
+      {
+        title: "나도 고양이 집사가 되고 싶다면 클릭",
+        link: {
+          mobileWebUrl: url,
+          webUrl: url,
+        },
+      },
+    ],
+  });
+});
 
 btnStart.addEventListener("click", function () {
   start.classList.remove("on");
@@ -238,6 +279,8 @@ let score = [
   { id: "TF", num: 0 },
   { id: "JP", num: 0 },
 ];
+
+let selectedData = null;
 
 function clickFunc(point) {
   if (count < 12) {
@@ -270,12 +313,13 @@ function clickFunc(point) {
       }
     }, "");
     console.log(mbti);
-    const selectedData = ResultData.find(function (item) {
+    selectedData = ResultData.find(function (item) {
       if (item.best === mbti) {
         return item;
       }
     });
     console.log(selectedData);
+    myMbti.textContent = selectedData.best;
     catType.textContent = selectedData.name;
     cat.src = `./images/cat/${selectedData.image}`;
     desc.textContent = selectedData.desc;
